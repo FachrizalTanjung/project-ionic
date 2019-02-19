@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="slider-zoom">
+  <h4 ion-text color="primary">Events</h4>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let event of events">
+      <img [src]="event.img" />
+      <h2 [innerHTML]="event.title"></h2>
+      <p [innerHTML]="event.description"></p>
+      <br />
+    </ion-slide>
+  </ion-slides>
+  <h4 ion-text color="primary">Informations</h4>
+  <ion-item-group>
+    <ion-item *ngFor="let info of informations">
+      <h6 [innerHTML]="info.title"></h6>
+      <p [innerHTML]="info.createDate"></p>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

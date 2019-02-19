@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pilih Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding text-center class="bg-select-login">
+  <button ion-button icon-start (click)='directFormLogin("wali_sekolah");'>
+    <div>
+      <div>
+        <ion-icon name="school"></ion-icon>
+      </div>
+      <label>Wali Sekolah</label>
+    </div>
+  </button>
+
+  <button ion-button icon-start (click)='directFormLogin("wali_murid");'>
+    <div>
+      <div>
+        <ion-icon name="person"></ion-icon>
+      </div>
+      <label>Wali Murid</label>
+    </div>
+  </button>
+</ion-content>

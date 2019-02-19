@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Student</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Add Student</h2>
+  <form novalidate [formGroup]="studentForm" (ngSubmit)="insertStudent();">
+    <ion-item>
+      <ion-label color="primary" fixed>Name</ion-label>
+      <ion-input type="tel" [(ngModel)]="student.name" formControlName="name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>Place of Birth</ion-label>
+      <ion-input type="tel" [(ngModel)]="student.placeOfBirth" formControlName="placeOfBirth" name="placeOfBirth"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>Date of Birth</ion-label>
+      <ion-datetime displayFormat="DD-MMM-YYYY" [(ngModel)]="student.dateOfBirth" formControlName="dateOfBirth" name="dateOfBirth"></ion-datetime>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label color="primary" fixed>Gender</ion-label>
+      <ion-input type="tel" [(ngModel)]="student.gender" formControlName="gender" name="gender"></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label color="primary" fixed>Gender</ion-label>
+      <ion-select [(ngModel)]="student.gender" formControlName="gender">
+        <ion-option value="F">Female</ion-option>
+        <ion-option value="M">Male</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>Level</ion-label>
+      <ion-input type="tel" [(ngModel)]="student.level" formControlName="level" name="level"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>School Name</ion-label>
+      <ion-input type="tel" [(ngModel)]="student.schoolName" formControlName="schoolName" name="schoolName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" fixed>Classroom</ion-label>
+      <ion-input type="tel" [(ngModel)]="student.classroom" formControlName="classroom" name="classroom"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block [disabled]="studentForm.invalid">Add Student</button>
+  </form>
+</ion-content>
