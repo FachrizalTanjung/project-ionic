@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SelectLoginPage } from '../pages/select-login/select-login';
 
 // import { LoginPage } from '../pages/login/login';
-import { SelectLoginPage } from '../pages/select-login/select-login';
+// import { SelectLoginPage } from '../pages/select-login/select-login';
+
 @Component({
   templateUrl: 'app.html'
 })
