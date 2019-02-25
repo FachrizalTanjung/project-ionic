@@ -12,6 +12,7 @@ import { StudentService } from '../providers/student-service/student-service';
 import { SelectLoginPage } from '../pages/select-login/select-login';
 import { EventService } from '../providers/event-service/event-service';
 import { InformationService } from '../providers/information-service/information-service';
+import { MenuService } from '../providers/menu-service/menu-service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { InformationService } from '../providers/information-service/information
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     StudentService,
     EventService,
-    InformationService
+    InformationService,
+    MenuService
   ]
 })
 export class AppModule { }

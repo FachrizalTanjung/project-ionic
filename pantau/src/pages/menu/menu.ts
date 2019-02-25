@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
+import { MenuService } from '../../providers/menu-service/menu-service';
 
 
 export interface PageInterface {
@@ -16,50 +17,50 @@ export interface PageInterface {
   templateUrl: 'menu.html',
 })
 export class MenuPage {
+
   rootPage = 'TabsPage';
+  menus: any;
 
   @ViewChild(Nav) nav: Nav;
 
-  //Start untuk membuat menu sidebar
-  pages: PageInterface[] = [
-    {
-      title: 'Dashboard',
-      pageName: 'TabsPage',
-      tabComponent: 'TabDashboardPage',
-      index: 0,
-      icon: 'home'
-    },
-    // {
-    //   title: 'Student',
-    //   pageName: 'TabsPage',
-    //   tabComponent: 'TabStudentPage',
-    //   index: 1,
-    //   icon: 'contacts'
-    // },
-    {
-      title: 'E-Learning',
-      pageName: 'ELearningPage',
-      icon: 'copy'
-    },
-    {
-      title: 'Events',
-      pageName: 'EventsPage',
-      icon: 'copy'
-    },
-    {
-      title: 'Informations',
-      pageName: 'InformationsPage',
-      icon: 'copy'
-    },
-    {
-      title: 'Special',
-      pageName: 'SpecialPage',
-      icon: 'people'
-    }
-  ];
-  //End untuk membuat menu sidebar
+  // pages: PageInterface[] = [
+  //   {
+  //     title: 'Dashboard',
+  //     pageName: 'TabsPage',
+  //     tabComponent: 'TabDashboardPage',
+  //     index: 0,
+  //     icon: 'home'
+  //   },
+  //   {
+  //     title: 'E-Learning',
+  //     pageName: 'ELearningPage',
+  //     icon: 'copy'
+  //   },
+  //   {
+  //     title: 'Events',
+  //     pageName: 'EventsPage',
+  //     icon: 'people'
+  //   },
+  //   {
+  //     title: 'Informations',
+  //     pageName: 'InformationsPage',
+  //     icon: 'copy'
+  //   }
+  // ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  pages: PageInterface[];
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public menuService: MenuService) {
+
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad Menu');
+    this.menus = this.getAllMenus();
+    console.log('test : ' + this.menus);
   }
 
   openPage(page: PageInterface) {
@@ -90,6 +91,14 @@ export class MenuPage {
       return 'primary';
     }
     return;
+  }
+
+  getAllMenus() {
+    this.menuService.getAllMenus()
+      .then(data => {
+        this.menus = data;
+        this.pages = this.menus;
+      });
   }
 
 }
