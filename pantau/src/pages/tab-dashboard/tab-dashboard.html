@@ -20,8 +20,8 @@
   <h4 ion-text color="primary">Informations</h4>
   <ion-item-group>
     <ion-item *ngFor="let info of informations">
-      <h6 [innerHTML]="info.title"></h6>
-      <p [innerHTML]="info.createDate"></p>
+      <h6 [innerHTML]="info.name"></h6>
+      <p [innerHTML]="info.createdAt"></p>
     </ion-item>
   </ion-item-group>
 </ion-content>

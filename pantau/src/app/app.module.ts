@@ -11,6 +11,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { StudentService } from '../providers/student-service/student-service';
 import { SelectLoginPage } from '../pages/select-login/select-login';
 import { EventService } from '../providers/event-service/event-service';
+import { InformationService } from '../providers/information-service/information-service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EventService } from '../providers/event-service/event-service';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     StudentService,
-    EventService
+    EventService,
+    InformationService
   ]
 })
 export class AppModule { }

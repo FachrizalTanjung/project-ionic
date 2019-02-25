@@ -8,20 +8,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-list *ngFor="let data of informations">
     <ion-item>
       <ion-thumbnail item-start>
-        <img src="assets/images/pantau.jpeg">
+        <img [src]="'data:image/JPEG;base64,' + data.picture" />
       </ion-thumbnail>
-      <h2>Pengumuman Kelulusan Peserta Didik</h2>
-      <p>Hayao Miyazaki • 1988</p>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/images/pantau.jpeg">
-      </ion-thumbnail>
-      <h2>Informasi Perubahan Jadwal Pelajaran</h2>
-      <p>Hayao Miyazaki • 1988</p>
+      <h2 [innerHTML]="data.name"></h2>
+      <p [innerHTML]="data.createdAt"></p>
     </ion-item>
   </ion-list>
 </ion-content>
