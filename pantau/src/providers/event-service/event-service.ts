@@ -5,16 +5,17 @@ import { Injectable } from '@angular/core';
 export class EventService {
 
   getAllEventsUrl = 'http://taslimrismantoproperty.com/pantau-ws/get-all-events';
+  data : any = {};
 
   constructor(public http: HttpClient) {
     console.log('Hello EventService Provider');
   }
 
   getAllEvents() {
-    console.log('masuk');
     return new Promise(resolve => {
       this.http.get(this.getAllEventsUrl).subscribe(data => {
-        resolve(data.data);
+        this.data = data;
+        resolve(this.data.data);
       }, err => {
         console.log(err);
       });

@@ -15,7 +15,7 @@ export class TabDashboardPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public eventService: EventService) {
-      this.getAllEvents();
+    this.getAllEvents();
   }
 
   getAllEvents() {
@@ -24,19 +24,6 @@ export class TabDashboardPage {
         this.events = data;
       });
   }
-
-  // events = [
-  //   {
-  //     title: 'Pengenalan Lingkungan',
-  //     description: 'Desc Pengenalan Lingkungan',
-  //     img: 'assets/images/pengenalan-lingkungan.jpg'
-  //   },
-  //   {
-  //     title: 'Sosialisasi',
-  //     description: 'Desc Sosialisasi',
-  //     img: 'assets/images/sosialisasi.jpg'
-  //   }
-  // ];
 
   informations = [
     {
