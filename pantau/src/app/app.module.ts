@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { MenuPage } from '../pages/menu/menu';
 import { StudentService } from '../providers/student-service/student-service';
 import { SelectLoginPage } from '../pages/select-login/select-login';
+import { EventService } from '../providers/event-service/event-service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SelectLoginPage } from '../pages/select-login/select-login';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    StudentService
+    StudentService,
+    EventService
   ]
 })
 export class AppModule { }

@@ -11,9 +11,9 @@
   <h4 ion-text color="primary">Events</h4>
   <ion-slides pager="true">
     <ion-slide *ngFor="let event of events">
-      <img [src]="event.img" />
-      <h2 [innerHTML]="event.title"></h2>
-      <p [innerHTML]="event.description"></p>
+      <img [src]="'data:image/JPEG;base64,' + event.picture" />
+      <h2 [innerHTML]="event.name"></h2>
+      <p [innerHTML]="event.desc"></p>
       <br />
     </ion-slide>
   </ion-slides>

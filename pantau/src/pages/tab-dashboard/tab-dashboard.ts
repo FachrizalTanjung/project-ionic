@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventService } from '../../providers/event-service/event-service';
 
 @IonicPage()
 @Component({
@@ -8,22 +9,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TabDashboardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  events: any;
 
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public eventService: EventService) {
+      this.getAllEvents();
   }
 
-  events = [
-    {
-      title: 'Pengenalan Lingkungan',
-      description: 'Desc Pengenalan Lingkungan',
-      img: 'assets/images/pengenalan-lingkungan.jpg'
-    },
-    {
-      title: 'Sosialisasi',
-      description: 'Desc Sosialisasi',
-      img: 'assets/images/sosialisasi.jpg'
-    }
-  ];
+  getAllEvents() {
+    this.eventService.getAllEvents()
+      .then(data => {
+        this.events = data;
+      });
+  }
+
+  // events = [
+  //   {
+  //     title: 'Pengenalan Lingkungan',
+  //     description: 'Desc Pengenalan Lingkungan',
+  //     img: 'assets/images/pengenalan-lingkungan.jpg'
+  //   },
+  //   {
+  //     title: 'Sosialisasi',
+  //     description: 'Desc Sosialisasi',
+  //     img: 'assets/images/sosialisasi.jpg'
+  //   }
+  // ];
 
   informations = [
     {

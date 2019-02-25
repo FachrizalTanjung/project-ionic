@@ -20,7 +20,7 @@ export class MenuPage {
 
   @ViewChild(Nav) nav: Nav;
 
-  //Start Untuk membuat menu sidebar
+  //Start untuk membuat menu sidebar
   pages: PageInterface[] = [
     {
       title: 'Dashboard',
@@ -29,12 +29,27 @@ export class MenuPage {
       index: 0,
       icon: 'home'
     },
+    // {
+    //   title: 'Student',
+    //   pageName: 'TabsPage',
+    //   tabComponent: 'TabStudentPage',
+    //   index: 1,
+    //   icon: 'contacts'
+    // },
     {
-      title: 'Student',
-      pageName: 'TabsPage',
-      tabComponent: 'TabStudentPage',
-      index: 1,
-      icon: 'contacts'
+      title: 'E-Learning',
+      pageName: 'ELearningPage',
+      icon: 'copy'
+    },
+    {
+      title: 'Events',
+      pageName: 'EventsPage',
+      icon: 'copy'
+    },
+    {
+      title: 'Informations',
+      pageName: 'InformationsPage',
+      icon: 'copy'
     },
     {
       title: 'Special',
@@ -42,7 +57,7 @@ export class MenuPage {
       icon: 'people'
     }
   ];
-  //End Untuk membuat menu sidebar
+  //End untuk membuat menu sidebar
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

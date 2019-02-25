@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Events</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let data of events">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="'data:image/JPEG;base64,' + data.picture" />
+      </ion-thumbnail>
+      <h2 [innerHTML]="data.name"></h2>
+      <p [innerHTML]="data.desc"></p>
+      <p [innerHTML]="data.createdAt"></p>
+    </ion-item>
+  </ion-list>
+</ion-content>
