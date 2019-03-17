@@ -8,5 +8,59 @@
 </ion-header>
 
 <ion-content padding>
-  This page E-Learning!
+
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let item of items">
+    {{ item }}
+  </ion-item>
+</ion-list>
+
+  <!-- <ion-card>
+  <ion-card-header>
+    Semester Ganjil
+  </ion-card-header>
+  <ion-card-content>
+    Kegiatan Belajar Kelas 1 B
+  </ion-card-content>
+</ion-card> -->
+
+<ion-card>
+  <ion-card-header>
+    Mata Pelajaran
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item>
+      <ion-icon name="book" item-start></ion-icon>
+      Bahasa Indonesia
+    </button>
+
+    <button ion-item>
+      <ion-icon name="bicycle" item-start></ion-icon>
+      Penjaskes
+    </button>
+
+    <button ion-item>
+      <ion-icon name="attach" item-start></ion-icon>
+      IPA
+    </button>
+
+    <button ion-item>
+      <ion-icon name="calculator" item-start></ion-icon>
+      Matematika
+    </button>
+
+    <button ion-item>
+      <ion-icon name="contacts" item-start></ion-icon>
+      Pendidkan Agama
+    </button>
+
+    <button ion-item>
+      <ion-icon name="create" item-start></ion-icon>
+      Bahasa Inggris
+    </button>
+
+  </ion-list>
+</ion-card>
 </ion-content>

@@ -13,6 +13,7 @@ import { SelectLoginPage } from '../pages/select-login/select-login';
 import { EventService } from '../providers/event-service/event-service';
 import { InformationService } from '../providers/information-service/information-service';
 import { MenuService } from '../providers/menu-service/menu-service';
+import { GroupServiceProvider } from '../providers/group-service/group-service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MenuService } from '../providers/menu-service/menu-service';
     StudentService,
     EventService,
     InformationService,
-    MenuService
+    MenuService,
+    GroupServiceProvider
   ]
 })
 export class AppModule { }
